@@ -20,3 +20,24 @@ navLinks.forEach(link => {
 navWrapper.addEventListener("mouseleave", () => {
     indicator.style.opacity = "0";
 });
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("animate-lawyers");
+
+    const cards = document.querySelectorAll(".lawyer-card.reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add("active");
+                }, index * 120);
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    cards.forEach(card => observer.observe(card));
+});
