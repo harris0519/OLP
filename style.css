@@ -526,7 +526,7 @@ body.animate-lawyers .lawyer-card.reveal {
 .lawyer-image {
     position: relative;
     overflow: hidden;
-    height: 480px;
+    height: 540px;
 }
 
     .lawyer-image img {
